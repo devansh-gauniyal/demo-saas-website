@@ -199,3 +199,117 @@ footer {
     font-size: 38px;
   }
 }
+
+/* MarketPilot agent visual upgrade */
+.agent-visual-upgrade {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 28px;
+  align-items: stretch;
+  margin: 24px 7vw 72px;
+  padding: 32px;
+  border: 1px solid rgba(49, 87, 213, 0.18);
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
+  box-shadow: 0 24px 60px rgba(23, 32, 51, 0.08);
+}
+
+.agent-visual-upgrade h2 {
+  margin: 0;
+  max-width: 680px;
+  font-size: 34px;
+  line-height: 1.12;
+}
+
+.agent-visual-upgrade p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.upgrade-eyebrow {
+  margin: 0 0 10px;
+  color: var(--brand);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.upgrade-cta {
+  margin-top: 14px;
+}
+
+.upgrade-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.upgrade-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.upgrade-metrics div,
+.upgrade-steps li {
+  border: 1px solid rgba(49, 87, 213, 0.16);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 16px;
+}
+
+.upgrade-metrics strong {
+  display: block;
+  color: var(--brand-dark);
+  font-size: 26px;
+  line-height: 1;
+}
+
+.upgrade-metrics span,
+.upgrade-steps span {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.upgrade-steps {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: upgrade-step;
+}
+
+.upgrade-steps li {
+  counter-increment: upgrade-step;
+}
+
+.upgrade-steps strong::before {
+  content: counter(upgrade-step);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: var(--brand);
+  font-size: 12px;
+}
+
+@media (max-width: 760px) {
+  .agent-visual-upgrade,
+  .upgrade-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .agent-visual-upgrade {
+    margin: 20px 5vw 52px;
+    padding: 22px;
+  }
+}
