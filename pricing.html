@@ -74,6 +74,64 @@
         </tbody>
       </table>
     </section>
+    <section class="interactive-conversion" aria-labelledby="interactive-conversion-title">
+      <div class="interactive-conversion__grid">
+        <div>
+          <p class="interactive-conversion__eyebrow">Plan Your Growth</p>
+          <h2 id="interactive-conversion-title">Estimate Your Autonomous Marketing ROI</h2>
+          <p>Use our interactive planner to see how LaunchPilot AI can accelerate your marketing efforts and drive tangible results for your SaaS business. Input your current metrics to get a personalized estimate.</p>
+          <div class="conversion-recommendations">
+            <article>
+              <h3>Start with Core Automation</h3>
+              <p>Focus on automating SEO audits and content drafting to free up your team's time.</p>
+            </article>
+            <article>
+              <h3>Scale Your Campaigns</h3>
+              <p>Utilize AI to propose and optimize paid ad and email campaigns for maximum reach.</p>
+            </article>
+          </div>
+        </div>
+        <form class="conversion-calculator" data-conversion-calculator>
+          <h3>Calculate Potential Savings &amp; Growth</h3>
+          <label class="conversion-field">
+            Monthly marketing spend (USD)
+            <input type="number" min="0" step="100" value="1200" data-conversion-visitors />
+          </label>
+          <label class="conversion-field">
+            Current marketing team size
+            <input type="number" min="0" max="100" step="0.1" value="2.5" data-conversion-rate />
+          </label>
+          <label class="conversion-field">
+            Average monthly leads generated
+            <input type="number" min="0" step="10" value="75" data-conversion-value />
+          </label>
+          <output class="conversion-result" data-conversion-result aria-live="polite">Estimated Monthly Value Added: $2,250</output>
+          <a class="button primary" href="pricing.html">Choose Your Plan</a>
+        </form>
+      </div>
+      <script>
+        (() => {
+          const currency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+          document.querySelectorAll('[data-conversion-calculator]').forEach((form) => {
+            const visitors = form.querySelector('[data-conversion-visitors]');
+            const rate = form.querySelector('[data-conversion-rate]');
+            const value = form.querySelector('[data-conversion-value]');
+            const result = form.querySelector('[data-conversion-result]');
+            const update = () => {
+              const visitorCount = Number(visitors.value) || 0;
+              const conversionRate = Number(rate.value) || 0;
+              const averageValue = Number(value.value) || 0;
+              const monthlyValue = visitorCount * (conversionRate / 100) * averageValue;
+              result.textContent = 'Estimated Monthly Value Added: ' + currency.format(monthlyValue);
+            };
+            form.addEventListener('input', update);
+            form.addEventListener('submit', (event) => event.preventDefault());
+            update();
+          });
+        })();
+      </script>
+    </section>
+
 
     
     <section class="content-improvement">
