@@ -21,7 +21,7 @@
     </header>
 
     <main class="page">
-      <h1>LaunchPilot AI Features: Empowering SaaS Growth with Autonomous Agents.</h1>
+      <h1>LaunchPilot AI Features: Autonomous Agents for Strategic SaaS Marketing.</h1>
       <p>
         LaunchPilot gives teams the pieces they need to plan and ship product
         launches.
@@ -67,6 +67,64 @@
         </article>
       </div>
     </section>
+    <section class="interactive-conversion" aria-labelledby="interactive-conversion-title">
+      <div class="interactive-conversion__grid">
+        <div>
+          <p class="interactive-conversion__eyebrow">See the Impact</p>
+          <h2 id="interactive-conversion-title">Plan Your Marketing Automation Journey</h2>
+          <p>Discover how LaunchPilot AI's autonomous agents can integrate into your existing workflows and deliver measurable improvements. Use our planner to visualize your potential gains.</p>
+          <div class="conversion-recommendations">
+            <article>
+              <h3>Automate Repetitive Tasks</h3>
+              <p>Delegate SEO audits and initial content drafts to AI agents, freeing up your team for strategy.</p>
+            </article>
+            <article>
+              <h3>Enhance Campaign Effectiveness</h3>
+              <p>Leverage AI for data-driven ad and email recommendations to boost performance.</p>
+            </article>
+          </div>
+        </div>
+        <form class="conversion-calculator" data-conversion-calculator>
+          <h3>Estimate Your Team's Time Savings</h3>
+          <label class="conversion-field">
+            Hours spent on SEO audits per month
+            <input type="number" min="0" step="100" value="1200" data-conversion-visitors />
+          </label>
+          <label class="conversion-field">
+            Hours spent drafting copy per month
+            <input type="number" min="0" max="100" step="0.1" value="2.5" data-conversion-rate />
+          </label>
+          <label class="conversion-field">
+            Hours spent planning campaigns per month
+            <input type="number" min="0" step="10" value="75" data-conversion-value />
+          </label>
+          <output class="conversion-result" data-conversion-result aria-live="polite">Estimated Monthly Hours Saved: $2,250</output>
+          <a class="button primary" href="pricing.html">Explore Pricing Plans</a>
+        </form>
+      </div>
+      <script>
+        (() => {
+          const currency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+          document.querySelectorAll('[data-conversion-calculator]').forEach((form) => {
+            const visitors = form.querySelector('[data-conversion-visitors]');
+            const rate = form.querySelector('[data-conversion-rate]');
+            const value = form.querySelector('[data-conversion-value]');
+            const result = form.querySelector('[data-conversion-result]');
+            const update = () => {
+              const visitorCount = Number(visitors.value) || 0;
+              const conversionRate = Number(rate.value) || 0;
+              const averageValue = Number(value.value) || 0;
+              const monthlyValue = visitorCount * (conversionRate / 100) * averageValue;
+              result.textContent = 'Estimated Monthly Hours Saved: ' + currency.format(monthlyValue);
+            };
+            form.addEventListener('input', update);
+            form.addEventListener('submit', (event) => event.preventDefault());
+            update();
+          });
+        })();
+      </script>
+    </section>
+
 
     
     <section class="content-improvement">
