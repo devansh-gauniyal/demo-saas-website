@@ -417,3 +417,108 @@ footer {
     overflow-x: auto;
   }
 }
+
+/* MarketPilot interactive conversion upgrade */
+.interactive-conversion {
+  margin: 28px 7vw 72px;
+  padding: 34px;
+  border: 1px solid rgba(49, 87, 213, 0.16);
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: 0 24px 80px rgba(23, 32, 51, 0.1);
+}
+
+.interactive-conversion__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+  gap: 28px;
+  align-items: start;
+}
+
+.interactive-conversion__eyebrow {
+  margin: 0 0 10px;
+  color: var(--brand);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.interactive-conversion h2 {
+  margin: 0;
+  max-width: 720px;
+  font-size: 34px;
+  line-height: 1.14;
+}
+
+.interactive-conversion p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.conversion-calculator {
+  display: grid;
+  gap: 14px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.conversion-calculator h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.conversion-field {
+  display: grid;
+  gap: 6px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.conversion-field input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 11px 12px;
+  color: var(--ink);
+  font: inherit;
+}
+
+.conversion-result {
+  display: block;
+  border-radius: 14px;
+  background: var(--ink);
+  color: #ffffff;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.conversion-recommendations {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.conversion-recommendations article {
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 860px) {
+  .interactive-conversion__grid,
+  .conversion-recommendations {
+    grid-template-columns: 1fr;
+  }
+
+  .interactive-conversion {
+    margin: 20px 5vw 52px;
+    padding: 22px;
+  }
+}
