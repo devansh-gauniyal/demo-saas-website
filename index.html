@@ -22,14 +22,14 @@
       <section class="hero">
         <div>
           <p class="eyebrow">AI launch operations</p>
-          <h1>LaunchPilot AI: Autonomous Marketing for Rapid SaaS Growth.</h1>
+          <h1>LaunchPilot AI: Autonomous Agents for Unstoppable SaaS Growth.</h1>
           <p>
             LaunchPilot helps small SaaS teams plan launches, organize assets,
             draft campaign copy, and keep every approval in one calm workspace.
           </p>
           <div class="actions">
-            <a class="button primary" href="pricing.html">Launch Your Autonomous Agent</a>
-            <a class="button secondary" href="features.html">Discover Core Features</a>
+            <a class="button primary" href="pricing.html">Get Started with LaunchPilot AI</a>
+            <a class="button secondary" href="features.html">Explore Agent Capabilities</a>
           </div>
         </div>
         <img src="assets/product-dashboard.svg" alt="MarketPilot AI product dashboard, showcasing autonomous marketing agent actions."/>
@@ -87,6 +87,64 @@
         </article>
       </div>
     </section>
+    <section class="interactive-conversion" aria-labelledby="interactive-conversion-title">
+      <div class="interactive-conversion__grid">
+        <div>
+          <p class="interactive-conversion__eyebrow">Interactive Growth Planner</p>
+          <h2 id="interactive-conversion-title">Calculate Your Autonomous Marketing ROI</h2>
+          <p>Estimate the potential monthly impact LaunchPilot AI can have on your SaaS growth by optimizing your marketing efforts.</p>
+          <div class="conversion-recommendations">
+            <article>
+              <h3>Review Agent Capabilities</h3>
+              <p>Explore how LaunchPilot AI's autonomous agents can directly influence your conversion rates and lead value.</p>
+            </article>
+            <article>
+              <h3>Optimize Key Metrics</h3>
+              <p>Focus on improving visitor traffic and conversion efficiency to maximize your estimated opportunity.</p>
+            </article>
+          </div>
+        </div>
+        <form class="conversion-calculator" data-conversion-calculator>
+          <h3>Estimate your potential monthly impact</h3>
+          <label class="conversion-field">
+            Monthly website visitors
+            <input type="number" min="0" step="100" value="1200" data-conversion-visitors />
+          </label>
+          <label class="conversion-field">
+            Current conversion rate (%)
+            <input type="number" min="0" max="100" step="0.1" value="2.5" data-conversion-rate />
+          </label>
+          <label class="conversion-field">
+            Average lead or signup value
+            <input type="number" min="0" step="10" value="75" data-conversion-value />
+          </label>
+          <output class="conversion-result" data-conversion-result aria-live="polite">Estimated monthly opportunity: $2,250</output>
+          <a class="button primary" href="features.html">Get Started with LaunchPilot AI</a>
+        </form>
+      </div>
+      <script>
+        (() => {
+          const currency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+          document.querySelectorAll('[data-conversion-calculator]').forEach((form) => {
+            const visitors = form.querySelector('[data-conversion-visitors]');
+            const rate = form.querySelector('[data-conversion-rate]');
+            const value = form.querySelector('[data-conversion-value]');
+            const result = form.querySelector('[data-conversion-result]');
+            const update = () => {
+              const visitorCount = Number(visitors.value) || 0;
+              const conversionRate = Number(rate.value) || 0;
+              const averageValue = Number(value.value) || 0;
+              const monthlyValue = visitorCount * (conversionRate / 100) * averageValue;
+              result.textContent = 'Estimated monthly opportunity: ' + currency.format(monthlyValue);
+            };
+            form.addEventListener('input', update);
+            form.addEventListener('submit', (event) => event.preventDefault());
+            update();
+          });
+        })();
+      </script>
+    </section>
+
 
     
     <section class="content-improvement">
